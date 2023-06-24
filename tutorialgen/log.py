@@ -18,7 +18,7 @@ def print_logs(logs: list[Union[MessageLog, FunctionCallLog]]):
         if log["role"] == "function":
             continue
             # print(f"[FUNCTION {log['name']}]")
-            #  print(log["content"])
+            # print(log["content"])
             # print(f"[END FUNCTION {log['name']}]")
         if log["role"] == "function_call":
             arguments = ", ".join(
