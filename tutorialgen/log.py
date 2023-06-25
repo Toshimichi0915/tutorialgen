@@ -14,6 +14,9 @@ class FunctionCallLog(TypedDict):
 
 
 def print_logs(logs: list[Union[MessageLog, FunctionCallLog]]):
+    for _ in range(10):
+        print()
+
     for log in logs:
         if log["role"] == "function":
             continue
@@ -21,6 +24,7 @@ def print_logs(logs: list[Union[MessageLog, FunctionCallLog]]):
             # print(log["content"])
             # print(f"[END FUNCTION {log['name']}]")
         if log["role"] == "function_call":
+            # print(f"executing function: {log['name']}")
             arguments = ", ".join(
                 [f"{name}={value}" for name, value in log["arguments"].items()]
             )

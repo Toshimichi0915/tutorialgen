@@ -142,7 +142,6 @@ def start_conversation(conversation: Conversation) -> Conversation:
             )
 
         print_logs(conversation["logs"])
-        print("-----")
         if should_continue:
             continue
 
